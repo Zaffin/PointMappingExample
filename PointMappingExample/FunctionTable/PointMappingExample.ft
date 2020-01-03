@@ -2,11 +2,10 @@
 # NETHook function table			
 ###############################################################################
 #
-# Name		: PROJECT_NAME.ft
-# NETHook 	: PROJECT_NAME.dll
-# Date		: 
-# Author	: 
-# Notes		:  ** Update all PROJECT_NAME references with the projects name **
+# Name		: PointMappingExample.ft
+# NETHook 	: PointMappingExample.dll
+# Date		: 01/02/2019
+# Author	: Zaffin
 # Language	: C#
 #
 ###############################################################################
@@ -15,17 +14,17 @@
 ######################
 # ASSIGN A UNIQUE NAME
 ######################
-APPLICATION "__PROJECT_NAME__"
+APPLICATION "__POINT_MAPPING_EXAMPLE__"
 
 ######################
 # NETHook LOCATION
 ######################
 #
 # Update paths below to match your install path and project name.
-FUNC_DLL   "CHOOKS\PROJECT_NAME.dll"
+FUNC_DLL   "CHOOKS\PointMappingExample.dll"
 RES_DLL    "SAME"
-dnRES_NAME "PROJECT_NAME.FunctionTable.Resource"
-CATEGORY   "MY NET-HOOK"
+dnRES_NAME "PointMappingExample.FunctionTable.Resource"
+CATEGORY   "Point Mapping Example"
 
 ##############################################################################
 # Public functions here

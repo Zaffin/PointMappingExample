@@ -1,14 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Main.cs" company="CNC Software, Inc.">
-//   Copyright (c) 2017 CNC Software, Inc.
-// </copyright>
-// <summary>
-//  If this project is helpful please take a short survey at ->
-//  http://ux.mastercam.com/Surveys/APISDKSupport 
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace PointMappingExample
+﻿namespace PointMappingExample
 {
     using Mastercam.App;
     using Mastercam.App.Types;
@@ -26,10 +16,10 @@ namespace PointMappingExample
         /// <returns>A <c>MCamReturn</c> return type representing the outcome of your NetHook application.</returns>
         public override MCamReturn Run(int param)
         {
-            using (var view = new MainView())
-            {
-                view.ShowDialog();
-            }
+            var view = new MainView();
+
+            view.ShowDialog();
+
 
             return MCamReturn.NoErrors;
         }

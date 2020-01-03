@@ -1,0 +1,117 @@
+﻿<Window x:Class="PointMappingExample.Views.MainView"
+        x:Name="PointMappingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:PointMappingExample.Views"
+        mc:Ignorable="d" 
+        Height="450"
+        Width="250"
+        ResizeMode="NoResize"
+        Title="Point Mapping">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch">
+
+            <Button x:Name="SelectPointButton"
+                    Width="29"
+                    Height="29"
+                    Command="{Binding SelectPointCommand}"
+                    CommandParameter="{Binding ElementName=PointMappingWindow}"
+                    DockPanel.Dock="Right">
+
+                <Image Source="Icons/SelectCursor24.png"
+                       Width="24"
+                       Height="24" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+
+            </Button>
+
+            <Label x:Name="SelectPointLabel"
+                   VerticalContentAlignment="Center"
+                   Content="Select point"
+                   DockPanel.Dock="Left"/>
+
+        </DockPanel>
+
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Grid.RowSpan="3"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock x:Name="SelectedPointXLabel"
+                       Height="27"
+                       Text="{Binding SelectedPointX, Mode=TwoWay, StringFormat={}X: {0:0.0000}}"/>
+            <TextBlock x:Name="SelectedPointYLabel"
+                   Height="27"
+                   Text="{Binding SelectedPointY, Mode=TwoWay, StringFormat={}Y: {0:0.0000}}"/>
+            <TextBlock x:Name="SelectedPointZLabel"
+                   Height="27"
+                   Text="{Binding SelectedPointZ, Mode=TwoWay, StringFormat={}Z: {0:0.0000}}"/>
+        
+        </StackPanel>
+
+        <ComboBox x:Name="ViewSelectionComboBox"
+                  Grid.Row="6"
+                  Grid.Column="1"
+                  Height="29"
+                  Width="Auto"
+                  ItemsSource="{Binding Views}"
+                  DisplayMemberPath="ViewName"
+                  SelectedValue="{Binding SelectedView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  IsSynchronizedWithCurrentItem="True">
+        </ComboBox>
+
+        <Label x:Name="MappedPointLabel"
+               Grid.Row="7"
+               Grid.Column="1"
+               VerticalContentAlignment="Center"
+               Content="Mapped point"/>
+        
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="8"
+                    Grid.Column="1"
+                    Grid.RowSpan="3"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock x:Name="MappedPointXLabel"
+                       Height="27"
+                       Text="{Binding MappedPointX, Mode=TwoWay, StringFormat={}X: {0:0.0000}}"/>
+            <TextBlock x:Name="MappedPointYLabel"
+                   Height="27"
+                   Text="{Binding MappedPointY, Mode=TwoWay, StringFormat={}Y: {0:0.0000}}"/>
+            <TextBlock x:Name="MappedPointZLabel"
+                   Height="27"
+                   Text="{Binding MappedPointZ, Mode=TwoWay, StringFormat={}Z: {0:0.0000}}"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
