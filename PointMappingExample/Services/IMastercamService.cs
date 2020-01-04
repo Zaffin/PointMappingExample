@@ -17,6 +17,8 @@ namespace PointMappingExample.Services
 
         Point3D MapPoint(Point3D point, MCView view);
 
+        Point3D MapPoint(Point3D point, Matrix3D view);
+
         void ClearPrompt();
 
     }

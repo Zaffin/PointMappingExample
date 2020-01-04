@@ -187,7 +187,7 @@
 
         private void MapPoint()
         {
-            mappedPoint = mastercamService.MapPoint(selectedPoint, SelectedView);
+            mappedPoint = mastercamService.MapPoint(SelectedPoint, SelectedView.ViewMatrix);
 
             MappedPointX = mappedPoint.x;
             MappedPointY = mappedPoint.y;

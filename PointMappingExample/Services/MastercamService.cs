@@ -36,9 +36,32 @@ namespace PointMappingExample.Services
             return ViewManager.ConvertToViewCoordinates(point, view);
         }
 
+        public Point3D MapPoint(Point3D point, Matrix3D matrix)
+        {
+            var mappedX = (point.x * matrix.Row1.x) +
+                          (point.y * matrix.Row2.x) +
+                          (point.z * matrix.Row3.x);
+
+            var mappedY = (point.x * matrix.Row1.y) +
+                          (point.y * matrix.Row2.y) +
+                          (point.z * matrix.Row3.y);
+
+            var mappedZ = (point.x * matrix.Row1.z) +
+                          (point.y * matrix.Row2.z) +
+                          (point.z * matrix.Row3.z);
+
+            return new Point3D
+            {
+                x = mappedX,
+                y = mappedY,
+                z = mappedZ
+            };
+        }
+
         public void ClearPrompt()
         {
             PromptManager.Clear();
         }
+
     }
 }
