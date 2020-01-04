@@ -28,6 +28,8 @@ namespace PointMappingExample.Services
                                          PointMask.Null, 
                                          ref selectedPoint);
 
+            PromptManager.Clear();
+
             return selectedPoint;
         }
 
@@ -56,11 +58,6 @@ namespace PointMappingExample.Services
                 y = mappedY,
                 z = mappedZ
             };
-        }
-
-        public void ClearPrompt()
-        {
-            PromptManager.Clear();
         }
 
     }

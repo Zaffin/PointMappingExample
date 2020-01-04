@@ -180,8 +180,6 @@
             SelectedPointY = selectedPoint.y;
             SelectedPointZ = selectedPoint.z;
 
-            mastercamService.ClearPrompt();
-
             view?.ShowDialog();
         }
 
